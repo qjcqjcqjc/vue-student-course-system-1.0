@@ -10,7 +10,10 @@ import './axios'
 import {setCookie, getCookie, delCookie} from '@/cookie'
 
 Vue.prototype.$cookieStore = {setCookie, getCookie, delCookie}
+import qs from 'qs'
+
 Vue.prototype.$axios = axios
+Vue.prototype.$qs = qs
 
 /* 测试环境mock才有效 */
 if (process.env.MOCK) {
