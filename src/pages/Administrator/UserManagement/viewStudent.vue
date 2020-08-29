@@ -58,7 +58,7 @@ export default {
     },
     handleStudent () {
       this.$axios
-        .get('http://localhost:8080/StudentCourse/getAllStudent')
+        .get('getAllStudent')
         .then((res) => {
           // 这是从本地请求的数据接口，
           this.student = res.data.data
@@ -74,7 +74,7 @@ export default {
         .then(() => {
           this.$axios
             .get(
-              'http://localhost:8080/StudentCourse/deleteStudent?id=' +
+              'deleteStudent?id=' +
                 row.studentId
             )
             .then((res) => {

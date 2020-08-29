@@ -2,7 +2,7 @@ import axios from 'axios'
 import ElementUI from 'element-ui'
 import {setCookie, getCookie, delCookie} from '@/cookie'
 
-axios.defaults.baseURL = 'http://localhost:8080/StudentCourse/'
+axios.defaults.baseURL = 'http://10.34.4.191:8080/StudentCourse/'
 axios.defaults.headers.common['Authorization'] = getCookie('Authorization')
 
 axios.interceptors.request.use(config => {

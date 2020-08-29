@@ -66,7 +66,7 @@ export default {
   methods: {
     pageList () {
       // 发请求拿到数据并暂存全部数据,方便之后操作
-      this.$axios.get('http://localhost:8080/StudentCourse/getAllCourse').then((res) => {
+      this.$axios.get('getAllCourse').then((res) => {
         // 这是从本地请求的数据接口，
         this.list = res.data.data
       })
@@ -149,7 +149,7 @@ export default {
         type: 'warning',
         center: true
       }).then(() => {
-        this.$axios.get('http://localhost:8080/StudentCourse/deleteCourse?courseId=' + row.courseId).then((res) => {
+        this.$axios.get('deleteCourse?courseId=' + row.courseId).then((res) => {
         // 判断如果删除失败，就做提示
           if (res.data.code !== 200) return this.$message.error('删除课程失败')
           // 修改成功的提示

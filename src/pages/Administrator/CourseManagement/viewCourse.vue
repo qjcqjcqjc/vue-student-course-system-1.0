@@ -57,7 +57,7 @@ export default {
     },
     handlecourse () {
       this.$axios
-        .get('http://localhost:8080/StudentCourse/getAllCourse')
+        .get('getAllCourse')
         .then((res) => {
           /* 模拟服务器响应 */
           if (res.data.code === 200) {
@@ -75,7 +75,7 @@ export default {
         type: 'warning',
         center: true
       }).then(() => {
-        this.$axios.get('http://localhost:8080/StudentCourse/deleteCourse?courseId=' + row.courseId).then((res) => {
+        this.$axios.get('deleteCourse?courseId=' + row.courseId).then((res) => {
         // 判断如果删除失败，就做提示
           if (res.data.code !== 200) return this.$message.error('删除课程失败')
           // 修改成功的提示

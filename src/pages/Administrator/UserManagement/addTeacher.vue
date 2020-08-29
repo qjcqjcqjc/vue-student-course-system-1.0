@@ -60,7 +60,7 @@ export default {
           }
           const _that = this
           this.$axios
-            .post('http://localhost:8080/StudentCourse/addTeacher', this.$qs.stringify(this.teacherForm))
+            .post('addTeacher', this.$qs.stringify(this.teacherForm))
             .then(res => {
             /* 模拟服务器响应 */
               if (res.data.code !== 200) {

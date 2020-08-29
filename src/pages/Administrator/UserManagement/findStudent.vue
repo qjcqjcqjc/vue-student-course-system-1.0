@@ -69,7 +69,7 @@ export default {
   methods: {
     pageList () {
       // 发请求拿到数据并暂存全部数据,方便之后操作
-      this.$axios.get('http://localhost:8080/StudentCourse/getAllStudent').then(res => { // 这是从本地请求的数据接口，
+      this.$axios.get('getAllStudent').then(res => { // 这是从本地请求的数据接口，
         this.list = res.data.data
       })
       this.getList()
@@ -126,7 +126,7 @@ export default {
         type: 'warning',
         center: true
       }).then(() => {
-        this.$axios.get('http://localhost:8080/StudentCourse/deleteStudent?id=' + row.studentId).then(res => { // 这是从本地请求的数据接口，
+        this.$axios.get('deleteStudent?id=' + row.studentId).then(res => { // 这是从本地请求的数据接口，
           if (res.data.code !== 200) {
             return this.$message.error(res.data.msg)
           }

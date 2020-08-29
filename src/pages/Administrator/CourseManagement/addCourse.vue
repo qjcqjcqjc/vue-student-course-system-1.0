@@ -74,7 +74,7 @@ export default {
           const _that = this
           console.log(this.courseForm.courseName)
           this.$axios
-            .post('http://localhost:8080/StudentCourse/addCourse', this.$qs.stringify(this.courseForm))
+            .post('addCourse', this.$qs.stringify(this.courseForm))
             .then(res => {
             /* 模拟服务器响应 */
               if (res.data.code !== 200) {
