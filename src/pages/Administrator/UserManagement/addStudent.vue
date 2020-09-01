@@ -60,7 +60,7 @@ export default {
           const _that = this
           console.log(this.studentForm.studentName)
           this.$axios
-            .post('http://localhost:8080/StudentCourse/addStudent', this.$qs.stringify(this.studentForm))
+            .post('addStudent', this.$qs.stringify(this.studentForm))
             .then(res => {
             /* 模拟服务器响应 */
               if (res.data.code !== 200) {
@@ -92,5 +92,5 @@ export default {
   .el-button{
     margin-left:5%;
   }
-  
+
 </style>

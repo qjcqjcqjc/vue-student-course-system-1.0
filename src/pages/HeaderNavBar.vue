@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a>桂林电子科技大学选课系统</a>
+        桂林电子科技大学学生选课管理系统
   </div>
 </template>
 <script>
@@ -19,9 +19,11 @@ export default {
 }
 </script>
 <style scoped>
-a{
-    font-size: 50px;
-    margin-left: 400px;
+div{
+    margin-top:3%;
+    color:blue;
+    text-align: center;
+    font-size: 30px;
+    box-sizing: border-box;
 }
-
 </style>
