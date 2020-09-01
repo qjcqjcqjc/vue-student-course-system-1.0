@@ -1,9 +1,12 @@
 /* eslint-disable eqeqeq */
 <template>
-  <div>
+  <div class="all">
     <el-container>
       <el-header>
-        <a>学生选课系统</a>
+        <img src="../assets/logo.png" />
+        <el-form class="title">
+          <a>学生选课系统</a>
+        </el-form>
       </el-header>
       <el-main>
         <el-form
@@ -11,13 +14,13 @@
           :rules="rules"
           ref="ruleForm"
           label-width="100px"
-          class="demo-ruleForm"
+          class="demo-loginForm"
         >
-          <el-form-item label="用户名" prop="username">
-            <el-input v-model="ruleForm.username"></el-input>
+          <el-form-item prop="username">
+            <el-input v-model="ruleForm.username" placeholder="用户名" clearable></el-input>
           </el-form-item>
-          <el-form-item label="密码" prop="password">
-            <el-input v-model="ruleForm.password" show-password></el-input>
+          <el-form-item prop="password">
+            <el-input v-model="ruleForm.password" show-password placeholder="密码" clearable></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
@@ -34,8 +37,8 @@ export default {
   data () {
     return {
       ruleForm: {
-        username: '1700720133',
-        password: '1700720133'
+        username: '17007',
+        password: '17007'
       },
       rules: {
         username: [
@@ -80,50 +83,53 @@ export default {
 </script>
 
 <style scoped>
-a{
-  font-size: 50px;
+img {
+  width: 80px;
+  height: 60px;
+  margin-left: -20px;
 }
-
-.demo-ruleForm {
-  width: 300px;
-  height: 500px;
+.el-header {
+  background-color: rgba(30, 144, 255, 0.7);
+  color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 400px;
+  height: 100px;
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 7%;
+  box-sizing: border-box;
+  font-size: 25px;
 }
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-
-  line-height: 200px;
-}
-
 .el-main {
   text-align: center;
   line-height: 160px;
-  background-image: url("../assets/login.jpg");
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: -50px;
+}
+.demo-loginForm {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 360px;
+  margin-left: -50px;
+}
+.all {
+  background: url("../assets/login.png") no-repeat;
+  width: 101.4%;
+  height: 100%;
+  margin: -10px -10px;
+  box-sizing: border-box;
   background-size: cover;
+  padding-bottom: 13%;
 }
-
-body > .el-container {
-  margin-bottom: 80px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
-
 </style>
